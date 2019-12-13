@@ -30,19 +30,19 @@ on(
       btnElem,
       resultPlt,
     )
-    display(result)
+    # display(result)
   end,
 
   btnElem,
 )
 
-display(layout)
+# display(layout)
 
-# @app app = (
-#   Mux.defaults,
-#   page("/", req->layout),
-#   page("/result/", req->result),
-#   Mux.notfound()
-# )
-#
-# serve(app, 8080)
+@app app = (
+  Mux.defaults,
+  page("/", req->layout),
+  page("/result/", req->result),
+  Mux.notfound()
+)
+
+serve(app, 8080)
