@@ -9,7 +9,7 @@ To use the app in Juno/Atom uncomment the `display` functions
 
 This uses `Mux.jl`, `Interact.jl` and `Plots.jl`
 
-![Main Page](Main Page.jpg)
+![Main Page](Main_Page.jpg)
 ![Results Page](Result.jpg)
-![Main Page](Main Page Juno.jpg)
-![Results Page](Result Juno.jpg)
+![Main Page](Main_Page_Juno.jpg)
+![Results Page](Result_Juno.jpg)
