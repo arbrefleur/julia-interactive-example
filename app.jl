@@ -9,33 +9,40 @@ plt = plot(0, 0)
 
 layout = vbox(titleElem, numElem, linesElem, btnElem, plt)
 
-result = plot(1:5, rand(5, 5), title="")
+resultPlt = plot(1:5, rand(5, 5), title="")
+result = vbox(
+  titleElem,
+  numElem,
+  linesElem,
+  btnElem,
+  resultPlt,
+)
 
 on(
   function (n)
 
-    global result = plot(1:numElem[], rand(numElem[], linesElem[]), title=titleElem[])
+    global resultPlt = plot(1:numElem[], rand(numElem[], linesElem[]), title=titleElem[])
 
-    global layout = vbox(
+    global result = vbox(
       titleElem,
       numElem,
       linesElem,
       btnElem,
-      result,
+      resultPlt,
     )
-    # display(result)
+    display(result)
   end,
 
   btnElem,
 )
 
-# display(layout)
+display(layout)
 
-@app app = (
-  Mux.defaults,
-  page("/" ,req->layout),
-  page("/", req->layout)
-  Mux.notfound()
-)
-
-serve(app, 8080)
+# @app app = (
+#   Mux.defaults,
+#   page("/", req->layout),
+#   page("/result/", req->result),
+#   Mux.notfound()
+# )
+#
+# serve(app, 8080)
